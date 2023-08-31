@@ -1,0 +1,52 @@
+﻿@page
+@model WebApp.Pages.OTPModel
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro de Usuarios - Autenticación</title>
+    <link rel="stylesheet" type="text/css" href="~/css/CreateUserStyles.css">
+    <script src="~/js/OTP.js"></script>
+</head>
+<body>
+    <div class="timeline">
+        <div class="step">Información General</div>
+        <div class="step">Ubicación</div>
+        <div class="step active">Autenticación</div>
+    </div>
+
+    <div class="form-container">
+        <h2>Registro de Usuarios - Autenticación</h2>
+        <form method="post" asp-page-handler="Register" onsubmit="return validarFormulario()">
+            <div class="form-row">
+                <div class="form-column">
+                    <label>Método de Autenticación:</label>
+                    <select id="authMethod" name="authMethod" onchange="toggleAuthMethod()" required>
+                        <option value="">Seleccionar método de autenticación</option>
+                        <option value="otp_email">Correo electrónico</option>
+                        <option value="otp_phone">Teléfono</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="otpFields" style="display:none;">
+                <div class="form-row">
+                    <div class="form-column">
+                        <label for="otp">Código OTP:</label>
+                        <input type="text" id="otp" name="otp">
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden" id="userId" name="userId" value="@Model.UserId">
+
+            <button class="back-button" onclick="goBack()">Atrás</button>
+            <button type="button" class="next-button" onclick="validateOTP()">Validar OTP</button>
+            <button type="button" class="next-button" onclick="requestOTP()">Solicitar OTP</button>
+
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿.container {
+    margin-top: 100px;
+    margin-bottom:15%;
+}
+
+.card {
+    background-color: #6e41bf;
+    box-shadow: 13px 11px 14px 0px rgba(73,23,184,0.58);
+    -webkit-box-shadow: 13px 11px 14px 0px rgba(73,23,184,0.58);
+    -moz-box-shadow: 13px 11px 14px 0px rgba(73,23,184,0.58);
+}
+
+.card-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border-radius: 4px;
+    box-shadow: none;
+}
+

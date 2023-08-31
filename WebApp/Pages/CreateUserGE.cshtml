@@ -1,0 +1,113 @@
+﻿@page
+@model WebApp.Pages.CreateUserModel
+@{
+}
+
+
+<head>
+    <title>Registro de Usuarios - Información General</title>
+    <link href="~/css/createuserge.css" rel="stylesheet" />
+    <script src="~/js/UbicationUser.js"></script>
+    <script src="~/js/Createuserge.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhFSvGQa0QBc0LcYRf88spbk3vxuSZHvw&callback=initMap" async defer></script>
+
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Registro de vendedores</h2>
+        <div id="stepper">
+            <div class="step" id="step1">
+                <div class="form-row">
+                    <div class="form-column">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre">
+                    </div>
+                    <div class="form-column">
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" id="apellidos" name="apellidos">
+                    </div>
+                    <div class="form-column">
+                        <label for="tipoIdentificacion">Tipo de Identificación:</label>
+                        <select id="tipoIdentificacion" name="tipoIdentificacion">
+                            <option value="nacional">Nacional</option>
+                            <option value="extranjero">Extranjero</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-column">
+                        <label for="numeroIdentificacion">Número de Identificación:</label>
+                        <input type="text" id="numeroIdentificacion" name="numeroIdentificacion">
+
+                    </div>
+                    <div class="form-column">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email">
+
+                    </div>
+                    <div class="form-column">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="text" id="telefono" name="telefono">
+
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-column">
+                        <label for="cedulaImagen">Cargar Imagen de Cédula:</label>
+                        <div id="container-images-names">
+                        </div>
+                        <button class="btn btn-info" type="button" id="btnLoadImages">Subir</button>
+                    </div>
+                    <div class="form-column">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password">
+                    </div>
+                    <div class="form-column">
+                        <label for="confirmPassword">Confirmar Contraseña:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-secondary btn-block mt-3" onclick="nextStep(2)">Siguiente</button>
+            </div>
+            <div class="step" id="step2" style="display: none;">
+                <div class="content">
+                    <div id="map" style="height: 400px;"></div>
+                    <input class="form-control" id="address" type="text" readonly="">
+                </div>
+                <button type="button" class="btn btn-secondary btn-block mt-3" id="btn-siguiente" onclick="validarFormulario()">Registrarse</button>
+                <button type="button" class="btn btn-secondary btn-block mt-3" onclick="prevStep(1)">Atrás</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+
+        function nextStep(nextStepNumber) {
+            document.getElementById(`step${currentStep}`).style.display = "none";
+            document.getElementById(`step${nextStepNumber}`).style.display = "block";
+            currentStep = nextStepNumber;
+        }
+
+        function prevStep(prevStepNumber) {
+            document.getElementById(`step${currentStep}`).style.display = "none";
+            document.getElementById(`step${prevStepNumber}`).style.display = "block";
+            currentStep = prevStepNumber;
+        }
+
+        function submitForm() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            console.log("Name:", name);
+            console.log("Email:", email);
+            alert("Form submitted successfully!");
+        }
+    </script>
+
+</body>
+
+
+

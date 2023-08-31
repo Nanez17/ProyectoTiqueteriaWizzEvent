@@ -1,0 +1,44 @@
+﻿.banner {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--gris-claro);
+}
+
+    .banner img {
+        max-width: 100%;
+        height: auto;
+    }
+
+.info-empresa {
+    padding: 30px;
+    background-color: var(--gris-claro);
+    text-align: center;
+    color: var(--gris-oscuro);
+}
+
+.empleados {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    background-color: var(--gris-claro);
+}
+
+.empleado {
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    background-color: var(--azul-claro);
+    color: var(--gris-oscuro);
+    border-radius: 10px;
+}
+
+.empleado img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 15px;
+}

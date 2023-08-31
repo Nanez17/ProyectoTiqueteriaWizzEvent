@@ -1,0 +1,33 @@
+﻿@page
+@model WebApp.Pages.Admin.AdminEventsCRUDModel
+@{
+}
+<script src="~/js/pages/admin/admineventscrud.js"></script>
+<div class="my-4 pb-3 vh-100">
+    <div class="d-flex justify-content-between align-items-center">
+        <h1 class="m-0">Eventos</h1>
+        <div><a class="btn btn-outline-success" asp-page="/createevent" >Crear nuevo evento</a></div>
+    </div>
+    <div class="my-4 pb-3">
+        <table id="tblEvent" class="table-dark">
+            <thead>
+                <tr class="table-primary">
+                    <th>Nombre</th>
+                    <th>Slogan</th>
+                    <th>Descripcion</th>
+                    <th>Modalidad</th>
+                    <th>Fecha del evento</th>
+                    <th>Cantidad tiquetes</th>
+                    <th>Informacion</th>
+                    <th>Metodo de pago</th>
+                    <th>Tiquetes de cortesia</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+    </div>
+    </div>

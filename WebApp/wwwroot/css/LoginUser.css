@@ -1,0 +1,91 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-section {
+    flex: 1;
+    padding: 20px;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-section h1 {
+        margin-bottom: 20px;
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+    .form-row label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-row input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+.forgot-password-link {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+    .forgot-password-link a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        .forgot-password-link a:hover {
+            text-decoration: underline;
+        }
+
+.login-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .login-button:hover {
+        background-color: #0056b3;
+    }
+
+.register-section {
+    margin-top: 20px;
+}
+
+    .register-section a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        .register-section a:hover {
+            text-decoration: underline;
+        }
+
+.image-section {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+    .image-section img {
+        max-width: 100%;
+        max-height: 200px;
+    }

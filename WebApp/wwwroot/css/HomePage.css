@@ -1,0 +1,182 @@
+﻿.container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    margin-top:50px;
+    width: 40%; 
+    background-color: #007bff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.card img {
+    width: 95%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.card-text ,.card-title {
+    margin-top: 10px;
+}
+
+.btn {
+    width:300px;
+    margin-top: 10px;
+}
+
+/*Modal Info*/
+
+/* En tu archivo homepage.css o donde tengas tus estilos */
+.modal-dialog {
+    max-width: 680px; 
+}
+
+
+.modal-header span{
+    margin-left:10px;
+}
+
+#imageModal {
+    max-width: 100%;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+
+#Slogan{
+    font-size:26px;
+}
+
+.contacts {
+    column-count: 2;
+}
+
+.modal-footer{
+    justify-content:center
+}
+
+.chatbot-container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 300px;
+    max-height: 500px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    background-color: #f6f6f6;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+    text-align: center;
+}
+
+.chat-output {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.chat-input {
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+}
+
+    .chat-input input {
+        flex: 1;
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .chat-input button {
+        margin-left: 10px;
+        padding: 5px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007BFF;
+        color: #fff;
+        cursor: pointer;
+    }
+
+.user-message,
+.bot-message {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.user-message {
+    background-color: #007BFF;
+    color: #fff;
+    align-self: flex-end;
+    max-width: 80%;
+}
+
+.bot-message {
+    background-color: #f6f6f6;
+    color: #333;
+    align-self: flex-start;
+    max-width: 80%;
+}
+/*Add tickets to cart*/
+
+.tbl-buyTickets {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.type-Ticket {
+    display: flex;
+    align-items: center;
+}
+
+    .type-Ticket p {
+        margin: 0;
+    }
+
+    .type-Ticket td {
+        padding: 20px;
+        text-align: center;
+    }
+
+        .type-Ticket td:nth-child(2),
+        .type-Ticket td:nth-child(3) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    .type-Ticket span {
+        margin-right: 10px;
+    }
+
+.fa-solid {
+    cursor: pointer;
+    margin: 0 15px;
+}

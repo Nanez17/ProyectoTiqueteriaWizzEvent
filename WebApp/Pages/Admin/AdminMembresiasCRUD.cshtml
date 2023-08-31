@@ -1,0 +1,70 @@
+﻿@page
+@model AdminMembresiasModel
+@{
+}
+
+<script src="~/js/pages/admin/adminmembresiascrud.js"></script>
+<div class="my-4 pb-3 vh-100">
+    <div class="d-flex justify-content-between align-items-center">
+        <h1 class="m-0">Membresias</h1>
+        <div><a class="btn btn-outline-success" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Crear nueva membresia</a></div>
+    </div>
+    <div class="my-4 pb-3">
+        <table id="tblMembresias" class="table-dark">
+            <thead>
+                <tr class="table-primary">
+                    <th>Nombre</th>
+                    <th>Rango de boletos</th>
+                    <th>Porcentaje de comision por boleto</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width:40%">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Creacion de la membresia</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" >
+            <form id="membershipForm">
+                <div class="mb-3">
+                    <label for="inputName" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="inputName" name="name" required onkeyup="validationName()">
+                    <span id="errorName"></span>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputTicketsMin" class="form-label">Rango de tiquetes a vender</label>
+                    <div class="col">
+                        <label for="inputTicketsMin" class="form-label">Min</label>
+                        <input type="number" class="form-control" id="inputTicketsMin" name="ticketsMin" placeholder="MIN" required onkeyup="validationTicketMin()">
+                    </div>
+                    <div class="col">
+                        <label for="inputTicketsMin" class="form-label">Max</label>
+                        <input type="number" class="form-control" id="inputTicketsMax" name="ticketsMax" placeholder="MAX" required onkeyup="validationTicketMax()">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="inputCommission" class="form-label">Comision por tiquete</label>
+                    <input type="number" class="form-control" id="inputCommission" name="commission" step="0.1" required onkeyup="">
+
+                </div>
+                <div class="mb-3">
+                    <label for="inputPrice" class="form-label">Precio de la membresia</label>
+                    <input type="number" class="form-control" id="inputPrice" name="price" required step="0.1" onkeyup="">
+                </div>
+                <button type="button" class="btn btn-outline-success" id="btnCreate">Crear</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    
+</div>
+

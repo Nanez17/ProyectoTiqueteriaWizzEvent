@@ -1,0 +1,183 @@
+﻿.container-create-event {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    height: 80%;
+    background-color: #6f42c1;
+    display: flex;
+    margin-top: 40px;
+    min-height: 800px;
+    max-height: 1000px;
+    position: relative;
+}
+
+    .container-create-event h2 {
+        font-size: 30px;
+        margin: 20px 30px;
+    }
+
+    .container-create-event .main-container {
+        padding: 20px;
+    }
+
+.container-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    width: 100%;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+}
+
+.btn {
+    flex-grow: 1;
+    margin: 0 5px;
+}
+
+
+
+/*Container 1*/
+.container-1 {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+
+.form-1-container-1 {
+    width: 40%;
+}
+
+.form-1-container-1 input, textarea {
+    width: 100%;
+}
+
+.form-1-container-2 {
+    width: 40%;
+}
+
+.form-1-container-2 input, textarea {
+    width: 100%;
+}
+
+/*Container 1*/
+
+/*Container 2*/
+.container-2 {
+    display: none;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+
+.form-2-container-1 {
+    width: 40%;
+}
+
+.form-2-container-1 input, textarea {
+    width: 100%;
+}
+
+.form-2-container-2 {
+    width: 40%;
+}
+
+.form-2-container-2 input, textarea {
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+
+#input-information {
+    display: flex;
+    align-items: center;
+}
+
+    #input-information button {
+        margin-top: 30px;
+    }
+
+{
+    display: none;
+    justify-content: space-around;
+    height: 80%;
+}
+/*Container 2*/
+
+
+/*Container 3*/
+.container-3 {
+    display: none;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+
+.form-3-container-1 {
+    width: 40%;
+}
+
+.form-3-container-1 input, textarea {
+    width: 100%;
+}
+
+.form-3-container-2 {
+    width: 40%;
+}
+
+.form-3-container-2 input, textarea {
+    width: 100%;
+}
+
+#Scenery1 {
+}
+
+.sector {
+    fill: #D3D3D3;
+    stroke: #003366;
+    stroke-width: 0px;
+    transition: fill 0.3s;
+}
+
+.sector:hover {
+    fill: #ea39b8;
+    cursor: pointer;
+}
+
+#escenario {
+    fill: #000000;
+    stroke: #003366;
+    stroke-width: 0px;
+}
+
+.sector-title {
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    text-anchor: middle;
+    fill: #000000;
+}
+
+.escenary-title {
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    text-anchor: middle;
+    fill: #fff;
+}
+/*Container 3*/
+
+
+
+

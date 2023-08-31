@@ -1,0 +1,29 @@
+﻿@page
+@model WebApp.Pages.BoletosGEModel
+@{
+}
+
+
+<script src="~/js/boletosge.js"></script>
+<div class="my-4 pb-3 vh-100">
+ <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2 class="mb-4">QR Code</h2>
+        <!-- Input and Button -->
+        <div class="input-group mb-3">
+          <input type="text" id="qrInput" class="form-control" placeholder="Ingresar informacion del QR Code ">
+                    <button class="btn btn-primary" id="registerBtn" onclick="retrieveInfoInput()">Registrar</button>
+        </div>
+        <!-- Card for Displaying Information -->
+        <div class="card" style="display: none;">
+          <div class="card-body">
+            <h5 class="card-title">Informacion del boleto</h5>
+            <p class="card-text" id="qrInfo"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+

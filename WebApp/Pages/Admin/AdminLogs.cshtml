@@ -1,0 +1,33 @@
+﻿@page
+@model WebApp.Pages.Admin.AdminLogsModel
+@{
+}
+
+<script src="~/js/pages/admin/adminlogs.js"></script>
+
+
+<div class="my-4 pb-3 vh-100">
+    <div>
+        <h1 class="m-0">Registro de actividades</h1>
+    </div>
+    <p>Aqui encotrara la lista de los registros del sistema.</p>
+
+    <div style="overflow-x:auto">
+        <table id="tblLogs" class="table-dark">
+            <thead>
+                <tr class="table-primary">
+                    <th>Id del Usuario</th>
+                    <th>Tipo</th>
+                    <th>Objeto afectado</th>
+                    <th>Informacion previa</th>
+                    <th>Informacion despues del cambio</th>
+                    <th>Fecha y hora</th>
+
+                </tr>
+            </thead>
+            <tbody style="max-width:100%">
+            </tbody>
+        </table>
+
+    </div>
+</div>

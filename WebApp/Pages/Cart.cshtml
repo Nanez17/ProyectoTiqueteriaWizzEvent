@@ -1,0 +1,72 @@
+﻿@page
+@model WebApp.Pages.CartModel
+@{
+}
+<script src="~/js/pages/cart.js"></script>
+<link href="~/css/cart.css" rel="stylesheet" />
+<h1>Carrito</h1>
+<div>
+    <table id="tblCart" class="table-dark">
+        <thead>
+            <tr class="table-primary">
+                <th>Evento</th>
+                <th>Fecha</th>
+                <th>Sector</th>
+                <th>ID asiento</th>
+                <th>Asiento</th>
+                <th>Precio</th>
+                <th>Nombre Dueño</th>
+                <th>Correo Dueño</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div class="container-text">
+        <div class="container">
+            <h6>Cantidad de tickets: </h6>
+            <p id="tickets">0</p>
+        </div>
+        <div class="container">
+            <h6>Precio Total: </h6>
+            <p id="ticketsPrice">0</p>
+        </div>
+        <div id="qr">
+
+        </div>
+    </div>
+    <div class="container-buttons">
+        <button type="submit" class="btn btn-secondary" id="btnPay">Pagar</button>
+        <button type="submit" class="btn btn-warning" id="btnCleanCart" >Limpiar Carrito</button>
+    </div>
+</div>
+
+<div class="modal" id="modalPayTickets">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Pago</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <span id="statusPeding" class="badge bg-danger" style="display:inline-block">Pendiente de pago</span>
+                <span id="statusPaid" class="badge bg-success" style="display:none">Pagado</span>
+                <h6>Client:</h6><p id="clientInfo"></p>
+                <h6>Identification:</h6><p id="identificationInfo"></p>
+                <h6>Email:</h6><p id="emailInfo"></p>
+                <h6>Number of Tickets:</h6><p id="numTicketsInfo"></p>
+                <h6>Total Price:</h6><p id="totalPriceInfo"></p>
+                <h6>Transaction Number:</h6><p id="transactionInfo"></p>
+                <h6>Payment Date:</h6><p id="paymentDateInfo"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="btnSendQR">Enviar codigos QR</button>
+                <button type="button" class="btn btn-info" id="btnSendEmail">Enviar correo</button>
+                <button type="button" class="btn btn-danger" id="btnPayCart">Pagar</button>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,52 @@
+﻿h1 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#tblCart {
+    width: 100%;
+}
+
+.container-text {
+    display: flex;
+    margin-top: 30px;
+}
+.container p {
+    margin-right: 30px;
+}
+
+.container-buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:space-around;
+}
+
+/* Estilos para el modal-body como factura */
+.modal-body {
+    padding: 20px;
+}
+
+    .modal-body h4 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .modal-body p {
+        margin: 0;
+        margin-bottom:20px;
+    }
+
+.badge {
+    padding: 6px 10px;
+    margin-right: 5px;
+    border-radius: 4px;
+}
+
+    .badge.bg-danger {
+        margin-bottom: 20px;
+    }
+
+    .badge.bg-success {
+        margin-bottom:20px;
+    }
+

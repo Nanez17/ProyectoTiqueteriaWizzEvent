@@ -1,0 +1,105 @@
+﻿@page
+@model WebApp.Pages.ProfileModel
+@{
+}
+<script src="~/js/pages/profile.js"></script>
+<body>
+    <div class="card text-white bg-primary mb-3 mt-5">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                    <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                    <span class="font-weight-bold" id="name"></span>
+                    <span class="" id="email"></span>
+                </div>
+            </div>
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Perfil de Usuario</h4>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6"><label class="labels" id="nameLabel">Nombre</label><input type="text" class="form-control" placeholder="nombre" id="nameInput"></div>
+                        <div class="col-md-6"><label class="labels" id="txtLastNameLabel">Apellidos</label><input type="text" class="form-control" value="" placeholder="apellidos" id="txtLastNameInput"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels" id="txtPhoneLabel">Teléfono</label><input type="text" class="form-control" placeholder="teléfono" id="txtPhoneInput"></div>
+                        <div class="col-md-12"><label class="labels" id="locationLabel">Ubicación</label><input type="text" class="form-control" placeholder="ubicación" id="locationInput"></div>
+                        <div class="col-md-12"><label class="labels" id="emailLabel">Email</label><input type="text" class="form-control" placeholder="email" id="emailInput"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <label class="labels">Tipo de Identificación</label>
+                            <select id="tipoIdentificacion" class="form-select">
+                                <option value="nacional">Nacional</option>
+                                <option value="extranjero">Extranjero</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6"><label class="labels" id="numeroIdentificacionLabel">Número de Identificación</label><input id="numeroIdentificacionInput" type="text" class="form-control" value="" placeholder="número de identificación"></div>
+                    </div>
+                </div>
+            </div>
+          
+        
+            <!-- Sección para Gestor de Eventos -->
+            <div class="col-md-4 mt-5">
+                <div class="p-3 py-5 mt-5">
+                    <div class=" opciones" data-rol="Gestor de Eventos">
+                        <div class="d-flex flex-column align-items-center">
+                            <label>Membresía actual:</label>
+                            <span id="txtMembresia">WizzGoat</span>
+                            <button class="btn btn-secondary mt-2" id="compraMembresia" data-toggle="modal" data-target="#membresiasModal">Cambiar Membresía</button>
+                        </div>
+              
+                    </div>
+                    <!-- Contenido específico para Gestor de Eventos -->
+                </div>
+            </div>
+            <div class="modal fade" id="membresiasModal" tabindex="-1" aria-labelledby="membresiasModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="membresiasModalLabel">Selección de Membresías</h5>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Cerrar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Contenido de las membresías se llenará aquí dinámicamente -->
+                            <div class="modal-body">
+                                <div class="row" id="membresiasContainer">
+                                <!-- Las membresías se agregarán aquí dinámicamente -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Sección para Cliente General -->
+            <div class="p-5">
+                <div class="">
+                    <div class=" opciones" data-rol="Cliente General" >
+                        <div style="text-align:center"> <h2>Mis boletos</h2></div>
+                        <table id="tblBoletos" class="table-dark" style="width:100%">
+                            <thead>
+                                <tr class="table-primary">
+                                    <th>Cantidad</th>
+                                    <th>Evento</th>
+                                    <th>Imprimir</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                  
+                </div>
+            </div>
+</body>

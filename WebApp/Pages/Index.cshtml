@@ -1,0 +1,99 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<link href="~/css/homepage.css" rel="stylesheet" />
+<script src="~/js/pages/homepage.js"></script>
+<div style="width:100%">
+    <img src="~/imgs/bannereventwizz.png" alt="Banner de ejemplo" style="max-width: 100%;">
+</div>
+<div class="modal" id="modalInfo">
+    <div class="modal-dialog" id="modalInfo" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="titleEvent"></h5>
+                <span class="badge bg-secondary" id="category"></span>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img id="imageModal" src="">
+                <small class="text-body-secondary" id="Slogan"></small>
+                <p id="Description"></p>
+                <p id="Modality"></p>
+                <p id="Fecha"></p>
+                <p id="Information"></p>
+                <p id="Payment"></p>
+                <p>Contactos:</p>
+                <div id="container-contacts">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnBuyTicket" class="btn btn-secondary">Comprar Entrada</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modalAddCart">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Evento de Bad Bunny</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body-tickets">
+                <table class="tbl-buyTickets">
+                    <tbody id="ticketTableBody">
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnAddCartItems" class="btn btn-secondary">Añadir al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-cards">
+</div>
+
+<div class="chatbot-container" id="chatbotContainer">
+    <div class="chat-header">
+        <span>Chatbot</span>
+    </div>
+    <div class="chat-output" id="chatOutput"></div>
+    <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Escribe un mensaje...">
+        <button id="sendBtn">Enviar</button>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#btnBuyTicket').on('click', function () {
+            if (localStorage.getItem('idUsuario') === 0){
+                Swal.fire(
+                    'Oops!?',
+                    'Debe iniciar sesion!',
+                    'error'
+                )
+            }else{
+                $('#modalAddCart').modal('show');
+            }
+        });
+
+        $('#modalAddCart').on('show.bs.modal', function () {
+            $('#modalInfo').modal('hide');
+        });
+
+        $('#modalAddCart').on('hidden.bs.modal', function () {
+            $('#modalInfo').modal('show');
+        });
+    });
+</script>

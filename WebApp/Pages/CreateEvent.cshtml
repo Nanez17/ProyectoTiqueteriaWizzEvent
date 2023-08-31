@@ -1,0 +1,265 @@
+﻿@page
+@model WebApp.Pages.CreateEventModel
+@{
+}
+<link href="~/css/createevent.css" rel="stylesheet" />
+<script src="~/js/pages/createevent.js"></script>
+<div class="container-create-event">
+    <h2>Create Event</h2>
+    <div class="main-container">
+        
+        <div class="container-1 step" >
+            <div class="form-1-container-1">
+                <label class="col-form-label mt-4" for="inputDefault">Ingrese el nombre del evento:</label>
+                <input type="text" class="form-control" id="txtName">
+
+                <label for="exampleTextarea" class="form-label mt-4">Ingrese la descripcion del evento:</label>
+                <textarea class="form-control" id="txtDescription" rows="3"></textarea>
+
+                <h4>Contactos</h4>
+                <table id="table-contacts" style="margin-top:20px;">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Contacto</th>
+                    </tr>
+                </table>
+
+                <button type="button" id="btnAddContact" class="btn btn-primary btn-sm" style="background-color:deeppink;border-radius:25px">Añadir</button>
+                <button type="button" id="btnDeleteContact" class="btn btn-tercery btn-sm" style="background-color:deeppink;border-radius:25px">Eliminar</button>
+
+                <!--Ventana Modal crear contacto-->
+                <div class="modal" id="modalContact">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Crear contacto</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true"></span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <label class="col-form-label mt-4" for="inputDefault">Ingrese el nombre del contacto:</label>
+                                <input type="text" class="form-control" id="txtContactName">
+                                <label class="col-form-label mt-4" for="inputDefault">Ingrese el contacto:</label>
+                                <input type="text" class="form-control" id="txtContact">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" id="btnCreateContact">Crear</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="form-1-container-2">
+                <label class="col-form-label mt-4" for="inputDefault">Ingrese el eslogan:</label>
+                <input type="text" class="form-control" id="txtSlogan">
+
+                <label for="exampleSelect1" class="form-label mt-4">Ingrese la Modalidad:</label>
+                <select class="form-select" id="txtModality">
+                    <option value="Presencial">Presencial</option>
+                    <option value="Virtual">Virtual</option>
+                </select>
+
+                <label class="col-form-label mt-4" for="inputDefault">Ingrese la fecha del evento:</label>
+                <input type="datetime-local" class="form-control" id="txtEventDate" min="2023-08-22T00:00">
+
+
+                <label for="formFile" class="form-label mt-4">Agregue una imagen</label>
+                <div id="container-images-names">
+                </div>
+                <button type="button" id="btnLoadImages" style="background-color:deeppink;border-radius:25px; width:50px;margin-top:10px;">Subir</button>
+            </div>
+        </div>
+
+        <div class="container-2 step">
+            <div class="form-2-container-1">
+                <label class="col-form-label mt-4" for="inputDefault">Ingrese la cantidad de entradas:</label>
+                <input type="number" class="form-control" id="txtTotalTickets" value="0" min="0">
+
+                <table id="table-type-tickets" style="margin-top:20px;">
+                    <tr>
+                        <th>Tipo de entrada</th>
+                        <th>N° de entradas</th>
+                        <th>Precio</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control" id="txtSectorGeneral" value="General"></td>
+                        <td><input type="number" class="form-control" id="txtTicketsGeneral" value="0" min="0"></td>
+                        <td><input type="number" class="form-control" id="txtPriceGeneral" value="0" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control" id="txtSectorEstudiantes" value="Estudiantes"></td>
+                        <td><input type="number" class="form-control" id="txtTicketsStudents" value="0" min="0"></td>
+                        <td><input type="number" class="form-control" id="txtPriceStudents" value="0" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control" id="txtSectorTicketsAdults" value="Adultos Mayores"></td>
+                        <td><input type="number" class="form-control" id="txtTicketsAdults" value="0" min="0"></td>
+                        <td><input type="number" class="form-control" id="txtPriceAdults" value="0" min="0"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="form-2-container-2">
+                <div id="input-information">
+                    <label class="col-form-label mt-4" for="inputDefault">Ingrese la información del evento (reglas, restricciones, recomendaciones):</label>
+                    <button id="btnEditInformation" type="button" class="btn btn-secondary">Editar</button>
+                    <div class="modal" id="infoModal">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Informacion:</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <textarea class="form-control" style="height:700px;" id="txtInformation" rows="3"></textarea>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <label for="exampleSelect1" class="form-label mt-4" style="margin-top:20px;">Ingrese la Modalidad:</label>
+                <select class="form-select" id="stlPayment">
+                    <option value="PAY">Paypal</option>
+                    <option value="SUN">SUNPE Movil</option>
+                    <option value="PS">Ambas</option>
+                </select>
+
+                <label for="exampleSelect1" class="form-label mt-4" style="margin-top:20px;">Seleccione una categoria:</label>
+                <select class="form-select" id="stlCategory">
+                </select>
+
+                <div id="input-free-tickets" style="margin-top:20px;">
+                    <label class="col-form-label mt-4" for="inputDefault">Ingrese la cantidad de entradas de cortesia:</label>
+                    <input type="number" class="form-control" id="txtFreeTickets" value="0" min="0">
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="container-3 step">
+            <div>
+                <img id="scenery1" src="~/imgs/scenery1.png" />
+                <img id="scenery2" src="~/imgs/scenery2.png" style="display:none" />
+                <img id="scenery3" src="~/imgs/scenery3.png" style="display:none" />
+            </div>
+
+            <div>
+                <label for="exampleSelect1" class="form-label mt-4">Escenario:</label>
+                <select class="form-select" id="sltScenery">
+                    <option data-location="La Union, San Jose">Auditorio</option>
+                    <option data-location="La Guacima, Alajuela">Parque Viva</option>
+                    <option data-location="La Sabana, San Jose">Estadio Nacional</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="container-buttons">
+        <div class="button-group">
+            <button type="button" class="btn btn-secondary" onclick="goToStep('prev')">Atras</button>
+            <button type="button" class="btn btn-secondary" id="btnSiguiente" onclick="goToStep('next')">Siguiente</button>
+            <button type="button" class="btn btn-secondary" id="btnEnviar" style="display: none;">Enviar</button>
+        </div>
+    </div>
+
+    <script>//function of stepper
+        let currentStep = 1;
+
+        function goToStep(action) {
+            const steps = document.querySelectorAll(".step");
+            const btnSiguiente = document.getElementById("btnSiguiente");
+            const btnEnviar = document.getElementById("btnEnviar");
+
+            if (action === 'prev') {
+                if (currentStep > 1) {
+                    steps[currentStep - 1].style.display = "none";
+                    currentStep--;
+                }
+            } else if (action === 'next') {
+                if (currentStep < steps.length) {
+                    steps[currentStep - 1].style.display = "none";
+                    currentStep++;
+                }
+            }
+
+            steps[currentStep - 1].style.display = "flex";
+
+            if (currentStep === 3) {
+                btnSiguiente.style.display = "none";
+                btnEnviar.style.display = "block";
+            } else {
+                btnSiguiente.style.display = "block";
+                btnEnviar.style.display = "none";
+            }
+        }
+
+    </script>
+
+    <script>// Show modals
+        $('#btnEditInformation').on('click', function () {
+            $('#infoModal').modal('show');
+        });
+
+        $('#btnAddContact').on('click', function () {
+            $('#modalContact').modal('show');
+        });
+
+    </script>
+
+    <script>//Validation to tickets
+        $('#txtTotalTickets, #txtTicketsGeneral, #txtTicketsStudents, #txtTicketsAdults, #txtFreeTickets').change(function () {
+            validarEntradas();
+        });
+
+        function validarEntradas() {
+            const totalTickets = parseInt($('#txtTotalTickets').val()) || 0;
+            const ticketsGeneral = parseInt($('#txtTicketsGeneral').val()) || 0;
+            const ticketsStudents = parseInt($('#txtTicketsStudents').val()) || 0;
+            const ticketsAdults = parseInt($('#txtTicketsAdults').val()) || 0;
+            const freeTickets = parseInt($('#txtFreeTickets').val()) || 0;
+
+            const totalEntradas = ticketsGeneral + ticketsStudents + ticketsAdults + freeTickets;
+
+            if (totalEntradas > totalTickets) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'La cantidad total de entradas no puede ser mayor a la cantidad ingresada!'
+                })
+
+                $('#txtFreeTickets').val(0);
+                $('#txtTicketsGeneral').val(0);
+                $('#txtTicketsStudents').val(0);
+                $('#txtTicketsAdults').val(0);
+                $('#txtFreeTickets').val(0);
+
+            
+            }
+        }
+    </script>
+
+    <script>//Change sceneries
+        $("#sltScenery").on("change", function () {
+            var selectedScenery = $(this).val();
+
+            $("#scenery1, #scenery2, #scenery3").hide();
+
+            if (selectedScenery === "Auditorio") {
+                $("#scenery1").show();
+            } else if (selectedScenery === "Estadio Nacional") {
+                $("#scenery2").show();
+            } else if (selectedScenery === "Parque Viva") {
+                $("#scenery3").show();
+            }
+        });
+    </script>
